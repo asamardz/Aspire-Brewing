@@ -1,0 +1,236 @@
+/*
+Copyright (c) 2011, Yahoo! Inc. All rights reserved.
+Code licensed under the BSD License:
+http://developer.yahoo.com/yui/license.html
+version: 2.9.0
+*/
+html{color:#000;background:#FFF}body,div,dl,dt,dd,ul,ol,li,h1,h2,h3,h4,h5,h6,pre,code,form,fieldset,legend,input,button,textarea,select,p,blockquote,th,td{margin:0;padding:0}table{border-collapse:collapse;border-spacing:0}fieldset,img{border:0}address,button,caption,cite,code,dfn,em,input,optgroup,option,select,strong,textarea,th,var{font:inherit}del,ins{text-decoration:none}li{list-style:none}caption,th{text-align:left}h1,h2,h3,h4,h5,h6{font-size:100%;font-weight:normal}q:before,q:after{content:''}abbr,acronym{border:0;font-variant:normal}sup{vertical-align:baseline}sub{vertical-align:baseline}legend{color:#000}
+
+/*HTML5 blocks cribbed from HTML5BOILERPLATE.COM*/
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section, small {
+  display:block;
+}
+
+
+html,body{	background-image: url('website_background.jpg');  
+	
+	font-family: Helvetica, Arial, sans-serif;
+    }
+
+h1 {font-size: 24pt; font-weight: bold; padding-top: 0px; margin-top: 0px; margin-bottom:20px; margin-left: 10px;}
+h2 {font-size: 14pt; font-weight: bold; margin-top: 10px; margin-bottom:5px; margin-left: 10px;}
+h3{font-size: 12pt; font-weight: bold; margin-top: 10px; margin-bottom:5px; margin-left: 10px;}
+
+strong {font-weight:bold;}
+
+a{
+text-decoration:none;
+}
+
+p {	
+width: 540px;
+line-height: 1.2;
+font-weight: normal;
+font-style: normal;
+text-align: justify;
+margin-bottom: 20px;
+margin-left: 10px;
+}
+
+div#page {
+	padding-top: 15px;
+	width: 960px;
+	margin: -5px auto;
+	position: relative;
+}
+
+div#content_home {
+	position: absolute;
+	width: 960px;
+	top: 220px;
+	background-color: #ede5bf;
+	padding-top: 60px;
+	padding-left: 10px;
+	padding-right: 0px;
+	padding-bottom: 25px;
+}
+
+div#content_aboutus {
+	position: absolute;
+	width: 960px;
+	top: 220px;
+	background-color: #ede5bf;
+	padding-top: 70px;
+	padding-left: 10px;
+	padding-right: 0px;
+	padding-bottom: 25px;
+}
+
+div#content_beers {
+	position: absolute;
+	width: 960px;
+	top: 220px;
+	background-color: #ede5bf;
+	padding-top: 70px;
+	padding-left: 10px;
+	padding-right: 0px;
+	padding-bottom: 25px;
+}
+
+div#content_contact {
+	position: absolute;
+	width: 960px;
+	top: 220px;
+	background-color: #ede5bf;
+	padding-top: 70px;
+	padding-left: 10px;
+	padding-right: 0px;
+	padding-bottom: 25px;
+}
+
+div#content_events {
+	position: absolute;
+	width: 960px;
+	top: 220px;
+	background-color: #ede5bf;
+	padding-top: 70px;
+	padding-left: 10px;
+	padding-right: 0px;
+	padding-bottom: 25px;
+}
+
+IMG.logo {
+	position: relative;
+	display: block;
+    margin-left: auto;
+    margin-right: auto;
+	z-index: 2;
+}
+	
+div#navigation_bar {
+	position: absolute;
+	background: #000;
+	height: 48px;					
+	width: 960px;					
+	top: 143px;
+	left: 0px;
+	padding: 5px;	
+	z-index: 1;	
+	}
+	
+
+ul#navigation_left a {
+	color: white;
+	font-size: 16pt;
+	font-weight:bold;
+	text-decoration: none;
+}
+
+ul#navigation_left {
+	position: absolute;
+	top: 160px;
+	left: 30px;
+	list-style:none;
+	z-index: 3;
+}
+
+ul#navigation_left li {
+	float: left;
+	margin-right: 30px;
+}
+
+ul#navigation_left a:hover, a:active {
+	color: #FED700;
+	text-decoration:none;
+}
+
+ul#navigation_right a {
+	color: white;
+	font-size: 16pt;
+	font-weight:bold;
+	text-decoration: none;
+}
+
+ul#navigation_right {
+	position: absolute;
+	top: 160px;
+	right: 0px;
+	list-style:none;
+	z-index: 3;
+}
+
+ul#navigation_right li {
+	float: left;
+	margin-right: 30px;
+}
+
+ul#navigation_right a:hover, a:active {
+	color: #FED700;
+	text-decoration:none;
+}
+
+div#twitter_feed {
+	position: absolute;
+	left: 650px;
+	top: 235px;
+	z-index: 3;
+}
+
+div#facebook_feed {
+	position: absolute;
+	z-index: 3;
+	left: 650px;
+	top: 480px;
+	color: #ffffff
+}
+
+div#calendar_primary {
+	padding: 10px;
+	
+}
+
+div#calendar_secondary{
+	position: absolute;
+	padding: 10px;
+	top: 128px;
+	left: 680px;
+}
+	
+/* Referenced twitter feed placement at http://www.themelab.com/2010/05/18/custom-twitter-widget-tutorial/ for styling and integrating twitter feed */
+
+div#twitter_feed_area {
+	position: absolute;
+	top: 240px;
+	margin-left: 600px;
+	padding-top: 10px;
+	padding-left: 10px;
+	padding-right: 10px;
+	width: 330px;
+	background-color: #d6d6d6; 
+}
+
+div#twitter_feed_title{
+	padding-bottom: 10px;
+}
+#twitter_update_list {
+	font-size: 10pt;
+	line-height: 20px;
+	list-style: none;
+	}
+#twitter_update_list li {
+	padding-bottom: 8px;
+	margin-bottom: 10px;
+	padding-bottom: 3px;
+	padding-left: 3px;
+	border-left: 2px solid;
+	border-bottom: 1px solid;
+	border-color: #000;
+	}
+#twitter_update_list span, #twitter_update_list span a {
+	color: #000;
+	text-decoration: none;
+	}
+#twitter_update_list a {
+	color: green;
+	}
