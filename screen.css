@@ -13,7 +13,7 @@ footer, header, hgroup, menu, nav, section, small {
 }
 
 
-html,body{	background-image: url('website_background.jpg');  
+html,body{	background-image: url('website_background_map.jpg');  
 	
 	font-family: Helvetica, Arial, sans-serif;
     }
@@ -33,7 +33,6 @@ width: 540px;
 line-height: 1.2;
 font-weight: normal;
 font-style: normal;
-text-align: justify;
 margin-bottom: 20px;
 margin-left: 10px;
 }
@@ -43,6 +42,7 @@ div#page {
 	width: 960px;
 	margin: -5px auto;
 	position: relative;
+	margin-bottom: 100px
 }
 
 div#content_home {
@@ -90,6 +90,17 @@ div#content_contact {
 }
 
 div#content_events {
+	position: absolute;
+	width: 960px;
+	top: 220px;
+	background-color: #ede5bf;
+	padding-top: 70px;
+	padding-left: 10px;
+	padding-right: 0px;
+	padding-bottom: 25px;
+}
+
+div#content_blog {
 	position: absolute;
 	width: 960px;
 	top: 220px;

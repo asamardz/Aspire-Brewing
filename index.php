@@ -1,162 +1,76 @@
 <?php get_header(); ?>
 
-  <div id="container">    
-    <div id="content">
-      <div id="page">
-    
-    
-      <IMG class="logo" src="Aspire-Brewing-Logo1_Glow.gif" width="300" height="300" alt="Aspire Brewing Logo">
-    
 
-    <div id="navigation_bar"></div>
-      <ul id="navigation_left">
-        <li><a href="index.html">Home</a></li>
-        <li><a href="aboutus.html">About Us</a></li>
-        <li><a href="beers.html">Beers</a></li>
-      </ul>
+	
+	<div id="page">
+		
+		
+			<IMG class="logo" src="Aspire-Brewing-Logo1_Glow.gif" width="300" height="300" alt="Aspire Brewing Logo">
+		
 
-      <ul id="navigation_right">
-        <li><a href="contact.html">Contact</a></li>
-        <li><a href="events.html">Events</a></li>  
-        <li><a href="">Blog</a></li>
-      </ul>
-    
-    <div id="content_blog">
-                
-      <h1> Aspire Brewing Blog </h1>
-                
-       
+		<div id="navigation_bar"></div>
+			<ul id="navigation_left">
 
-                        
-              <?php global $wp_query; $total_pages = $wp_query->max_num_pages; if ( $total_pages > 1 ) { ?>
-                                
-                                                        <div id="nav-above" class="navigation">
-                                                           <div class="nav-previous"><?php next_posts_link(__( '<span class="meta-nav">&laquo;</span> Older posts', 'your-theme' )) ?></div>
-                                                           <div class="nav-next"><?php previous_posts_link(__( 'Newer posts <span class="meta-nav">&raquo;</span>', 'your-theme' )) ?></div>
-                                                        </div><!-- #nav-above -->
+				<li><a href="index.html">Home</a></li>
+				<li><a href="aboutus.html">About Us</a></li>
+				<li><a href="beers.html">Beers</a></li>
+			</ul>
 
-              <?php } ?>                      
+			<ul id="navigation_right">
+				<li><a href="contact.html">Contact</a></li>
 
-              <?php /* The Loop ï¿½ with comments! */ ?>                        
-              <?php while ( have_posts() ) : the_post() ?>
+				<li><a href="events.html">Events</a></li>	
+				<li><a href="">Blog</a></li>
+			</ul>
+		
+		<div id="content_blog">
+								
+			<h1> Aspire Brewing Blog </h1>
+								
+					<?php if (have_posts()) : ?>
 
-              <?php /* Create a div with a unique ID thanks to the_ID() and semantic classes with post_class() */ ?>          
-                              <div id="post-<?php the_ID(); ?>" <?php post_class(); ?>>                               
-              <?php /* an h2 title */ ?>                                                      
-                                        <h2 class="entry-title"><a href="<?php the_permalink(); ?>" title="<?php printf( __('Permalink to %s', 'your-theme'), the_title_attribute('echo=0') ); ?>" rel="bookmark"><?php the_title(); ?></a></h2>
-                                        
-              <?php /* Microformatted, translatable post meta */ ?>                                                                           
-                                        <div class="entry-meta">
-                                                <span class="meta-prep meta-prep-author"><?php _e('By ', 'your-theme'); ?></span>
-                                                <span class="author vcard"><a class="url fn n" href="<?php echo get_author_link( false, $authordata->ID, $authordata->user_nicename ); ?>" title="<?php printf( __( 'View all posts by %s', 'your-theme' ), $authordata->display_name ); ?>"><?php the_author(); ?></a></span>
-                                                <span class="meta-sep"> | </span>
-                                                <span class="meta-prep meta-prep-entry-date"><?php _e('Published ', 'your-theme'); ?></span>
-                                                <span class="entry-date"><abbr class="published" title="<?php the_time('Y-m-d\TH:i:sO') ?>"><?php the_time( get_option( 'date_format' ) ); ?></abbr></span>
-                                                <?php edit_post_link( __( 'Edit', 'your-theme' ), "<span class=\"meta-sep\">|</span>\n\t\t\t\t\t\t<span class=\"edit-link\">", "</span>\n\t\t\t\t\t" ) ?>
-                                        </div><!-- .entry-meta -->
+					<?php while (have_posts()) : the_post(); ?>
 
-              <?php /* The entry content */ ?>                                        
-                                        <div class="entry-content">     
-                      <?php the_content( __( 'Continue reading <span class="meta-nav">&raquo;</span>', 'your-theme' )  ); ?>
-                      <?php wp_link_pages('before=<div class="page-link">' . __( 'Pages:', 'your-theme' ) . '&after=</div>') ?>
-                                        </div><!-- .entry-content -->
+					<div <?php post_class() ?> id=”post-<?php the_ID(); ?>”>
+					<h2><a href=”<?php the_permalink() ?>” rel=”bookmark” title=”Permanent Link to <?php the_title_attribute(); ?>”><?php the_title(); ?></a></h2>
+					<small><?php the_time(‘F jS, Y’) ?> <!– by <?php the_author() ?> –></small>
 
-              <?php /* Microformatted category and tag links along with a comments link */ ?>                                 
-                                        <div class="entry-utility">
-                                                <span class="cat-links"><span class="entry-utility-prep entry-utility-prep-cat-links"><?php _e( 'Posted in ', 'your-theme' ); ?></span><?php echo get_the_category_list(', '); ?></span>
-                                                <span class="meta-sep"> | </span>
-                                                <?php the_tags( '<span class="tag-links"><span class="entry-utility-prep entry-utility-prep-tag-links">' . __('Tagged ', 'your-theme' ) . '</span>', ", ", "</span>\n\t\t\t\t\t\t<span class=\"meta-sep\">|</span>\n" ) ?>
-                                                <span class="comments-link"><?php comments_popup_link( __( 'Leave a comment', 'your-theme' ), __( '1 Comment', 'your-theme' ), __( '% Comments', 'your-theme' ) ) ?></span>
-                                                <?php edit_post_link( __( 'Edit', 'your-theme' ), "<span class=\"meta-sep\">|</span>\n\t\t\t\t\t\t<span class=\"edit-link\">", "</span>\n\t\t\t\t\t\n" ) ?>
-                                        </div><!-- #entry-utility -->   
-                                </div><!-- #post-<?php the_ID(); ?> -->
+					<div>
+					<?php the_content(‘Read the rest of this entry &raquo;’); ?>
+					</div>
 
-              <?php /* Close up the post div */ ?>                    
-                  
-              <?php endwhile; ?>              
+					<p><?php the_tags(‘Tags: ‘, ‘, ‘, ‘<br />’); ?> Posted in <?php the_category(‘, ‘) ?> | <?php edit_post_link(‘Edit’, ”, ‘ | ‘); ?> <?php comments_popup_link(‘No Comments &#187;’, ’1 Comment &#187;’, ‘% Comments &#187;’); ?></p>
+					</div>
 
-              <?php global $wp_query; $total_pages = $wp_query->max_num_pages; if ( $total_pages > 1 ) { ?>
-                                <div id="nav-below" class="navigation">
-                                        <div class="nav-previous"><?php next_posts_link(__( '<span class="meta-nav">&laquo;</span> Older posts', 'your-theme' )) ?></div>
-                                        <div class="nav-next"><?php previous_posts_link(__( 'Newer posts <span class="meta-nav">&raquo;</span>', 'your-theme' )) ?></div>
-                                </div><!-- #nav-below -->
-              <?php } ?>                       
+					<?php endwhile; ?>
 
-                            
-            
-                
-              
-              
-              <div id="whole-sidebar">
+					<div>
+					<div><?php next_posts_link(‘&laquo; Older Entries’) ?></div>
+					<div><?php previous_posts_link(‘Newer Entries &raquo;’) ?></div>
+					</div>
 
-                <div id="primary" class="aside main-aside">
-                  <ul class="xoxo">
-                <li id="search-2" class="widgetcontainer widget_search"><h3 class="widgettitle"><label for="s">Search</label></h3>
+					<?php else : ?>
 
-                  <form id="searchform" method="get" action="http://aaronsamardzich.com/">
-                    <div>
-                      <input id="s" name="s" type="text" value="Type text" onfocus="if (this.value == 'Type text') {this.value = '';}" onblur="if (this.value == '') {this.value = 'Type text';}" size="20" tabindex="1" />
-                      <input id="searchsubmit" name="searchsubmit" type="submit" value="Search" tabindex="2" />
-                    </div>
-                  </form></li><li id="categories-2" class="widgetcontainer widget_categories"><h3 class="widgettitle">Categories</h3>
+					<h2>Not Found</h2>
+					<p>Sorry, but you are looking for something that isn’t here.</p>
+					<?php get_search_form(); ?>
 
-                    <ul>
-                  
-
-                                                                                 <?php wp_list_cats(); ?>
+					<?php endif; ?>
 
 
-                    </ul>
-                </li><li id="archives-2" class="widgetcontainer widget_archive"><h3 class="widgettitle">Archives</h3>
-                    <ul>
-                      <?php wp_get_archives('type=monthly'); ?>
+			
 
-                    </ul>
-                </li>
-                  </ul>
-                </div><!-- #primary .aside -->
-
-
-                <div id="secondary" class="aside main-aside">
-                  
-
-                <ul class="xoxo">
-                <li id="linkcat-2" class="widgetcontainer widget_links"><h3 class="widgettitle">Blogroll</h3>
+		</div> <!-- content blog-->
+		
+		
+				
+		
+		
+		
+		
+</div> <!-- page -->
 
 
-                  <ul class='xoxo blogroll'>
-                <?php get_links() ?>
+<?php get_sidebar(); ?>
 
-                  </ul>
-                </li>
-
-
-
-                <li id="rss-links-2" class="widgetcontainer widget_rss-links"><h3 class="widgettitle">RSS Links</h3>
-
-                      <ul>
-                        <li><a href="http://aaronsamardzich.com/?feed=rss2" title=" Posts RSS feed" rel="alternate nofollow" type="application/rss+xml">All posts</a></li>
-                        <li><a href="http://aaronsamardzich.com/?feed=comments-rss2" title=" Comments RSS feed" rel="alternate nofollow" type="application/rss+xml">All comments</a></li>
-                      </ul>
-                </li><li id="meta-2" class="widgetcontainer widget_meta"><h3 class="widgettitle">Meta</h3>
-                      <ul>
-                      <li><a href="http://aaronsamardzich.com/wp-admin/">Site Admin</a></li>      <li><a href="http://aaronsamardzich.com/wp-login.php?action=logout&amp;_wpnonce=5f0c4ac9f7">Log out</a></li>
-
-                            </ul>
-                </li>
-                  </ul>
-                 </div><!-- #secondary .aside -->
-              </div><!-- #whole-sidebar -->
-
-       </div> <!-- content_blog-->
-     </div> <!-- page -->
-  </div><!-- #content -->      
-</div><!-- #container -->
-          
-
-
-
-         
-    
- 
-
+<?php get_footer(); ?>
